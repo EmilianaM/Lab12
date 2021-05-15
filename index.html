@@ -1,0 +1,109 @@
+<!--
+show top menu
+-->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="custom-styles.css">
+</head>
+</html>
+<body>
+<h1>CRM (Customer Service Management)</h1>
+<div class="menu-container">
+<?php
+if (!isset($_SESSION['username'])):
+?>
+<span class="menu-item"><a href="login.html">Login</a></span>
+<?php else: ?>
+<span class="menu-item"><a href="index.php?pageNumber=1">Search</a> </span>
+<span class="menu-item"><a href="logout.php">Logout</a></span>
+<?php endif; ?>
+
+</div>
+
+</body>
+
+<!--
+Welcome Message 
+-->
+
+<div class="form-container">
+<h1>Customer Response Management Team</h1>
+<p>Welcome to our Customer Management Team.  Here you will find all sorts of answers
+ to your questions so we can provide the best service.</p>
+</div>
+
+<!--
+Login
+-->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="custom-styles.css">
+</head>
+<body>
+<div class = "form-container">
+<h1>Welcome Please Login</h1>
+
+<form action="login.php" method = "post">
+
+        <div class="form-group">
+                <label for="name">Name: </label>
+                <span class="input-span"><input type="text" name="login-name"></input></span>
+        </div>
+        <div class="form-group">
+                <label for = "password">Password: </label>
+                <span class="input-span"><input type="password" name="login-password"></input></span>
+        </div>
+  </div>
+</form>
+
+</div>
+</body>
+</html>
+
+<!--
+Register a new account 
+-->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="custom-styles.css">
+</head>
+<body>
+<div class = "form-container">
+<h1>Register a new account</h1>
+
+<form action="register.php">
+
+        <div class="form-group">
+                <label for="name">Name: </label>
+                <span class="input-span"><input type="text" name="name"></input></span>
+        </div>
+        <div class="form-group">
+                <label for = "password">Password: </label>
+                <span class="input-span"><input type="password" name="password"></input></span>
+        </div>
+        <div class="form-group">
+                <button type="submit" name="register">Register</button>
+        </div>
+</form>
+
+</div>
+</body>
+</html>
+
+
+<!--
+To add a complaint 
+-->
+
+<div class="form-container">
+<h2>Add a Complaint</h2>
+<p>Fill out all of the fields and submit</p>
+<form action="processAddItem.php">
+    Name:<input type="text" name="Name"></input><br>
+    Details of service needed:<textarea rows="5" cols="50" name="Detail of Service Neededs"></textarea><br>
+    <button type="submit">Add</button>
+</form>
+</div>
